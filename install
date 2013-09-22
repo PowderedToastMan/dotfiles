@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+if [ ! -d "$HOME/.ssh" ]; then
+   mkdir .ssh
+   chmod 700 .ssh
+fi
+
+[ ! -e "$HOME/.ssh/authorized_keys" ] && ln -s $HOME/.dotfiles/ssh/authorized_keys $HOME/.ssh/authorized_keys
+[ ! -e "$HOME/.tmux.conf" ] && ln -s $HOME/.dotfiles/tmux.conf $HOME/.tmux.conf
+[ ! -e "$HOME/.zshrc" ] && ln -s $HOME/.dotfiles/zshrc $HOME/.zshrc
+[ ! -e "$HOME/.vimrc" ] && ln -s $HOME/.dotfiles/vimrc $HOME/.vimrc
