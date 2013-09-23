@@ -4,4 +4,7 @@ rm -f ~/.ssh/authorized_keys
 rm -f ~/.tmux.conf
 rm -f ~/.zshrc
 rm -f ~/.vimrc
+rm -f ~/.vimrc_ide
 rm -f ~/.bash_profile
+rm -f ~/.bashrc
+rm -rf ~/.terminfo
