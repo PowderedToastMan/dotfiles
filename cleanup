@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+rm -f ~/.ssh/authorized_keys
+rm -f ~/.tmux.conf
+rm -f ~/.zshrc
+rm -f ~/.vimrc
+rm -f ~/.bash_profile
