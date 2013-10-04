@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 if [ ! -d "$HOME/.ssh" ]; then
-   mkdir .ssh
-   chmod 700 .ssh
+   mkdir $HOME/.ssh
+   chmod 700 $HOME/.ssh
 fi
 
 [ ! -e "$HOME/.ssh/authorized_keys" ] && ln -s $HOME/.dotfiles/ssh/authorized_keys $HOME/.ssh/authorized_keys
