@@ -1,20 +1,37 @@
+call pathogen#infect()
+
+set nocompatible                " Use Vim defaults instead of 100% vi compatibility
+set backspace=indent,eol,start  " more powerful backspacing
+set background=dark
+
 set autoindent
-set expandtab
+set number
+set ts=2 sts=2 sw=2 expandtab
+set history=1000
+syntax on
+
+" backup rules
+silent execute '!rm -rf $HOME/.vim/tmp'
+silent execute '!mkdir -p $HOME/.vimtmp/backup'
+set backupdir=$HOME/.vimtmp/backup
+silent execute '!mkdir -p $HOME/.vimtmp/swap'
+set directory=$HOME/.vimtmp/swap
+silent execute '!mkdir -p $HOME/.vimtmp/views'
+set viewdir=$HOME/.vimtmp/views
+
 set guifont=Terminus
 set hlsearch
 set incsearch
 set mouse=a
-set nobackup
 set nowrap
-set nowritebackup
-set number
 set ofu=syntaxcomplete#Complete
 set ruler
-set shiftwidth=3
-set tabstop=3
+set linespace=0
 
-syntax on
-filetype plugin indent on
+" filetype
+filetype on
+filetype plugin on
+filetype indent on
 
 map <F2> :w !sudo tee %<CR>
 map <C-N> :tabnext<CR>
@@ -30,8 +47,11 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
 
 if has('gui_running')
-   "colorscheme desert
-   colorscheme obsidian
+  colorscheme obsidian
+  "
+  " Make shift-insert work like in Xterm
+  map <S-Insert> <MiddleMouse>
+  map! <S-Insert> <MiddleMouse>
 else
-   colorscheme slate
+  colorscheme slate
 endif
