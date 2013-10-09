@@ -14,6 +14,7 @@ syntax on
 " airline
 set ls=2
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 
 " backup rules
 silent execute '!rm -rf $HOME/.vim/tmp'
