@@ -5,6 +5,9 @@ if [ ! -d "$HOME/.ssh" ]; then
    chmod 700 $HOME/.ssh
 fi
 
+# we may have to fix .dotfiles/ssh permissions
+chmod 700 ~/.dotfiles/ssh
+
 [ ! -e "$HOME/.ssh/authorized_keys" ] && ln -s $HOME/.dotfiles/ssh/authorized_keys $HOME/.ssh/authorized_keys
 [ ! -e "$HOME/.tmux.conf" ] && ln -s $HOME/.dotfiles/tmux.conf $HOME/.tmux.conf
 [ ! -e "$HOME/.zshrc" ] && ln -s $HOME/.dotfiles/zshrc $HOME/.zshrc
