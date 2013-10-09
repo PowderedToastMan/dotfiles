@@ -3,12 +3,17 @@ call pathogen#infect()
 set nocompatible                " Use Vim defaults instead of 100% vi compatibility
 set backspace=indent,eol,start  " more powerful backspacing
 set background=dark
+colorscheme obsidian
 
 set autoindent
 set number
 set ts=2 sts=2 sw=2 expandtab
 set history=1000
 syntax on
+
+" airline
+set ls=2
+let g:airline#extensions#tabline#enabled = 1
 
 " backup rules
 silent execute '!rm -rf $HOME/.vim/tmp'
@@ -47,11 +52,7 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
 
 if has('gui_running')
-  colorscheme obsidian
-  "
   " Make shift-insert work like in Xterm
   map <S-Insert> <MiddleMouse>
   map! <S-Insert> <MiddleMouse>
-else
-  colorscheme slate
 endif
