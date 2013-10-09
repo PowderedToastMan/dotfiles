@@ -3,7 +3,7 @@ call pathogen#infect()
 set nocompatible                " Use Vim defaults instead of 100% vi compatibility
 set backspace=indent,eol,start  " more powerful backspacing
 set background=dark
-colorscheme obsidian
+colorscheme zenburn
 
 set autoindent
 set number
@@ -56,4 +56,8 @@ if has('gui_running')
   " Make shift-insert work like in Xterm
   map <S-Insert> <MiddleMouse>
   map! <S-Insert> <MiddleMouse>
+endif
+
+if $TERM == "xterm-256color" || $TERM == "screen-256color" || $COLORTERM == "gnome-terminal"
+  set t_Co=256
 endif
