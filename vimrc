@@ -53,6 +53,10 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
 let g:BASH_Ctrl_j = 'off'
+nnoremap <LEFT> zh
+nnoremap <RIGHT> zl
+nnoremap <UP> <C-y>
+nnoremap <DOWN> <C-e>
 
 if has('gui_running')
   " Make shift-insert work like in Xterm
