@@ -9,6 +9,7 @@ set autoindent
 set number
 set ts=2 sts=2 sw=2 expandtab
 set history=1000
+set linebreak
 syntax on
 
 " airline
@@ -39,18 +40,19 @@ filetype on
 filetype plugin on
 filetype indent on
 
-map <F2> :w !sudo tee %<CR>
-map <C-N> :tabnext<CR>
-map <C-P> :tabprev<CR>
-map <F9>  :q<CR>
-map <F10> :split<CR>
-map <F11> :vsplit<CR>
-map <F12> :tabnew<CR>
-let g:BASH_Ctrl_j = 'off'
+map <F2>              : w !sudo tee %<CR>
+map <C-N>             : tabnext<CR>
+map <C-P>             : tabprev<CR>
+map <F9>              : q<CR>
+map <F10>             : split<CR>
+map <F11>             : vsplit<CR>
+map <F12>             : tabnew<CR>
+nnoremap <leader>w    : setlocal wrap!<cr>
 nnoremap <c-h> <c-w>h
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
+let g:BASH_Ctrl_j = 'off'
 
 if has('gui_running')
   " Make shift-insert work like in Xterm
