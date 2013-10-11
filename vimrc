@@ -64,6 +64,6 @@ if has('gui_running')
   map! <S-Insert> <MiddleMouse>
 endif
 
-if $TERM == "xterm-256color" || $TERM == "screen-256color" || $COLORTERM == "gnome-terminal"
+if $TERM == "xterm-256color" || $TERM == "screen-256color" || $TERM == "rxv-unicode-256color" || $COLORTERM == "gnome-terminal"
   set t_Co=256
 endif
