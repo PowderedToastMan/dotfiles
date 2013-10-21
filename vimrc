@@ -14,19 +14,27 @@ syntax on
 
 " airline
 set ls=2
+set encoding=utf-8
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
-" backup rules
-silent execute '!rm -rf $HOME/.vim/tmp'
-silent execute '!mkdir -p $HOME/.vimtmp/backup'
-set backupdir=$HOME/.vimtmp/backup
-silent execute '!mkdir -p $HOME/.vimtmp/swap'
-set directory=$HOME/.vimtmp/swap
-silent execute '!mkdir -p $HOME/.vimtmp/views'
-set viewdir=$HOME/.vimtmp/views
+" OS specific rules
+if has ('win32')
+  set nobackup
+  set nowritebackup
+  set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h9
+  set mousemodel=
+else
+  silent execute '!rm -rf $HOME/.vim/tmp'
+  silent execute '!mkdir -p $HOME/.vimtmp/backup'
+  set backupdir=$HOME/.vimtmp/backup
+  silent execute '!mkdir -p $HOME/.vimtmp/swap'
+  set directory=$HOME/.vimtmp/swap
+  silent execute '!mkdir -p $HOME/.vimtmp/views'
+  set viewdir=$HOME/.vimtmp/views
+  set guifont=Terminus
+endif
 
-set guifont=Terminus
 set hlsearch
 set incsearch
 set mouse=a
