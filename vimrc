@@ -1,3 +1,9 @@
+" Disable plugins based on vim version
+let g:pathogen_disabled = []
+
+if v:version < '703'
+  call add(g:pathogen_disabled, 'YouCompleteMe')
+endif
 call pathogen#infect()
 
 set nocompatible                " Use Vim defaults instead of 100% vi compatibility
