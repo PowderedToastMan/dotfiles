@@ -20,4 +20,13 @@ git submodule init
 git submodule update
 git submodule foreach git pull origin master
 
+VIMVERSION=$(vim -u -e -T dumb --cmd 'exe "set t_cm=\<C-M>"|echo v:version|quit'|tr -d '\015')
+
+if [ "$VIMVERSION" -ge "703" ]; then
+  pushd ~/.dotfiles/vim/bundle/YouCompleteMe
+  git submodule update --init --recursive
+  ./install.sh --clang-completer
+  popd
+fi
+
 fc-cache -vf ~/.fonts
