@@ -1,16 +1,16 @@
-###########################################################        
+###########################################################
 # Functions
 pathmunge () {
-	if ! echo $PATH | egrep -q "(^|:)$1($|:)" ; then
-		if [ "$2" = "after" ] ; then
-			PATH=$PATH:$1
-		else
-			PATH=$1:$PATH
-		fi
-	fi
+  if ! echo $PATH | egrep -q "(^|:)$1($|:)" ; then
+    if [ "$2" = "after" ] ; then
+      PATH=$PATH:$1
+    else
+      PATH=$1:$PATH
+    fi
+  fi
 }
 
-###########################################################        
+###########################################################
 # Options for zsh
 HISTFILE=~/.histfile
 HISTSIZE=50000
@@ -33,7 +33,7 @@ zstyle ':completion:*:approximate:*' max-errors 1 numeric
 # tab completion for PID :D
 zstyle ':completion:*:*:kill:*' menu yes select
 zstyle ':completion:*:kill:*' force-list always
-# cd not select parent dir. 
+# cd not select parent dir.
 zstyle ':completion:*:cd:*' ignore-parents parent pwd
 # no cache for autocomplete
 zstyle ':completion::complete:*' use-cache 0
@@ -57,7 +57,7 @@ pathmunge /sbin
 pathmunge ~/.remote
 pathmunge ~/bin
 
-###########################################################        
+###########################################################
 # Key Bindings
 bindkey -v
 bindkey '^R' history-incremental-search-backward
@@ -73,11 +73,11 @@ bindkey -v '\e[8~' vi-end-of-line
 [[ -z "$terminfo[cuu1]"  ]] || bindkey -M viins "$terminfo[cuu1]"  up-line-or-history
 [[ -z "$terminfo[kcuu1]" ]] || bindkey -M viins "$terminfo[kcuu1]" up-line-or-history
 
-###########################################################        
+###########################################################
 # X11 clipboard in VIM on RedHat/CentOS
 if [ -e /usr/bin/vimx ]; then alias vim='/usr/bin/vimx'; fi
 
-###########################################################        
+###########################################################
 # Aliases
 alias ls='ls --color=auto'
 alias vi='vim'
@@ -97,21 +97,20 @@ alias rmove='ionice -c 3 rsync -rv --progress --inplace --remove-source-files'
 CP_VERSION=$(cp --version | head -1 | cut -d ' ' -f 4) && CP_VERSION=$(echo $CP_VERSION|sed 's/\..*//g')
 [ $CP_VERSION -ge 8 ] && alias cp='cp --reflink=auto'
 
-###########################################################        
+###########################################################
 # Manpage colors
 export LESS_TERMCAP_mb=$'\E[01;31m'
 export LESS_TERMCAP_md=$'\E[01;31m'
 export LESS_TERMCAP_me=$'\E[0m'
-export LESS_TERMCAP_se=$'\E[0m'                           
-export LESS_TERMCAP_so=$'\E[01;44;33m'                                 
+export LESS_TERMCAP_se=$'\E[0m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 
-###########################################################        
+###########################################################
 # Execute local shell options
 if [ -f ~/.localrc ]
 then
-	. ~/.localrc
+  . ~/.localrc
 fi
 
 
@@ -119,18 +118,18 @@ export EDITOR="vim"
 export MAIL=$HOME/Mail/inbox
 export GIT_AUTHOR_NAME=${USER}@$(hostname)
 
-###########################################################        
+###########################################################
 # zsh breakes on CentoOS 5 with rxvt-unicode-256color
 if [ "$TERM" = "rxvt-unicode-256color" ]; then
-	grep '^CentOS release 5' /etc/issue >/dev/null 2>&1
-	if [ $? -eq 0 ]; then
-		export TERM=rxvt-unicode
-	fi
-	grep '^RecoveryOS release 5' /etc/issue >/dev/null 2>&1
-	if [ $? -eq 0 ]; then
-		export TERM=rxvt-unicode
-	fi
-	if [ "$OSTYPE" = "cygwin" ]; then
-		export TERM=rxvt-unicode
-	fi
+  grep '^CentOS release 5' /etc/issue >/dev/null 2>&1
+  if [ $? -eq 0 ]; then
+    export TERM=rxvt-unicode
+  fi
+  grep '^RecoveryOS release 5' /etc/issue >/dev/null 2>&1
+  if [ $? -eq 0 ]; then
+    export TERM=rxvt-unicode
+  fi
+  if [ "$OSTYPE" = "cygwin" ]; then
+    export TERM=rxvt-unicode
+  fi
 fi
