@@ -53,6 +53,7 @@ prompt adam1
 
 [ -h /usr/sbin ] || pathmunge /usr/sbin
 [ -h /sbin ]     || pathmunge /sbin
+[ -d ~/.gem/ruby/2.0.0/bin ] && pathmunge ~/.gem/ruby/2.0.0/bin
 pathmunge /usr/local/bin
 pathmunge ~/.remote
 pathmunge ~/bin
