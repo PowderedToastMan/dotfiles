@@ -51,9 +51,9 @@ autoload -U promptinit
 promptinit
 prompt adam1
 
+[ -h /usr/sbin ] || pathmunge /usr/sbin
+[ -h /sbin ]     || pathmunge /sbin
 pathmunge /usr/local/bin
-pathmunge /usr/sbin
-pathmunge /sbin
 pathmunge ~/.remote
 pathmunge ~/bin
 
