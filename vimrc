@@ -54,14 +54,16 @@ filetype on
 filetype plugin on
 filetype indent on
 
-map <F2>              : w !sudo tee %<CR>
-map <C-N>             : tabnext<CR>
-map <C-P>             : tabprev<CR>
-map <F9>              : q<CR>
-map <F10>             : split<CR>
-map <F11>             : vsplit<CR>
-map <F12>             : tabnew<CR>
-nnoremap <leader>w    : setlocal wrap!<cr>
+map <F2>           :w !sudo tee %<CR>
+map <C-N>          :tabnext<CR>
+map <C-P>          :tabprev<CR>
+map <F9>           :q<CR>
+map <F10>          :split<CR>
+map <F11>          :vsplit<CR>
+map <F12>          :tabnew<CR>
+nnoremap <leader>w :setlocal wrap!<cr>
+nnoremap <leader>c :Tabularize /\\<cr>
+nnoremap <leader>p :set paste!<cr>
 nnoremap <c-h> <c-w>h
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
