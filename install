@@ -7,6 +7,7 @@ fi
 
 # we may have to fix .dotfiles/ssh permissions
 chmod 700 ~/.dotfiles/ssh
+chmod 644 ~/.dotfiles/ssh/authorized_keys
 
 [ ! -e "$HOME/.ssh/authorized_keys" ] && ln -s $HOME/.dotfiles/ssh/authorized_keys $HOME/.ssh/authorized_keys
 [ ! -e "$HOME/.tmux.conf" ] && ln -s $HOME/.dotfiles/tmux.conf $HOME/.tmux.conf
