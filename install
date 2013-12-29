@@ -22,6 +22,13 @@ git submodule init
 git submodule update
 git submodule foreach git pull origin master
 
+# Fix oh-my-zsh on older zsh versions
+if (zsh --version | grep -q 4.2); then
+  cd $HOME/.dotfiles/zsh/oh-my-zsh
+  git checkout e3cede37a0 -- lib/termsupport.zsh
+  cd $HOME/.dotfiles
+fi
+
 VIMVERSION=$(vim -u -e -T dumb --cmd 'exe "set t_cm=\<C-M>"|echo v:version|quit'|tr -d '\015')
 
 if [ "$VIMVERSION" -ge "703" ]; then
