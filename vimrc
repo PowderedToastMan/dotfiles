@@ -9,7 +9,7 @@ call pathogen#infect()
 set nocompatible                " Use Vim defaults instead of 100% vi compatibility
 set backspace=indent,eol,start  " more powerful backspacing
 set background=dark
-colorscheme zenburn
+colorscheme solarized
 
 set autoindent
 set number
