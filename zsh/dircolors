@@ -1,0 +1,5 @@
+if (echo $TERM|grep -q 256color); then
+  eval $(dircolors ~/.dotfiles/dircolors/solarized/dircolors.256dark)
+else
+  eval $(dircolors ~/.dotfiles/dircolors/solarized/dircolors.ansi-dark)
+fi

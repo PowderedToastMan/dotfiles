@@ -1,0 +1,14 @@
+# zsh breakes on CentoOS 5 with rxvt-unicode-256color
+if [ "$TERM" = "rxvt-unicode-256color" ]; then
+  grep '^CentOS release 5' /etc/issue >/dev/null 2>&1
+  if [ $? -eq 0 ]; then
+    export TERM=rxvt-unicode
+  fi
+  grep '^RecoveryOS release 5' /etc/issue >/dev/null 2>&1
+  if [ $? -eq 0 ]; then
+    export TERM=rxvt-unicode
+  fi
+  if [ "$OSTYPE" = "cygwin" ]; then
+    export TERM=rxvt-unicode
+  fi
+fi
