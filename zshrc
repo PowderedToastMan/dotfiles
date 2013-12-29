@@ -49,7 +49,7 @@ compinit
 # Set prompt
 autoload -U promptinit
 promptinit
-prompt adam1
+prompt redhat
 
 [ -h /usr/sbin ] || pathmunge /usr/sbin
 [ -h /sbin ]     || pathmunge /sbin
