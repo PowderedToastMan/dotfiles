@@ -1,7 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/home/davek/.dotfiles/vim/bundle/airline/autoload/airline'
-let g:netrw_dirhist_2='/home/dave/.config/transmission-daemon'
-let g:netrw_dirhist_3='/home/dave/src/linux-dzk-update/linux-dzk'
-let g:netrw_dirhist_4='/home/dave/tmp/docker/redis'
-let g:netrw_dirhist_5='/home/dave/tmp/docker/gitlab/src'
