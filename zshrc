@@ -17,13 +17,18 @@ HISTSIZE=50000
 SAVEHIST=50000
 setopt hist_ignore_all_dups
 unsetopt GLOBAL_RCS
-eval $( dircolors -b )
 autoload -Uz compinit
 setopt appendhistory extendedglob notify
 unsetopt beep
 setopt nohashdirs
 setopt nohashcmds
 unsetopt share_history
+
+if (echo $TERM|grep -q 256color); then
+  eval $(dircolors ~/.dotfiles/dircolors/solarized/dircolors.256dark)
+else
+  eval $(dircolors ~/.dotfiles/dircolors/solarized/dircolors.ansi-dark)
+fi
 
 zstyle :compinstall filename '/home/davek/.zshrc'
 # allow approximate
