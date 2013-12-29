@@ -1,6 +1,6 @@
 # Set ls colors
 
-if (grep -q '^CentOS release 5' /etc/issue) || (grep -q '^RecoveryOS release 5'); then
+if (grep -q '^CentOS release 5' /etc/issue) || (grep -q '^RecoveryOS release 5' /etc/issue); then
   eval $(dircolors ~/.dotfiles/dircolors/solarized/dircolors.ansi-dark)
 else
   if (echo $TERM|grep -q 256color); then
