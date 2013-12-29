@@ -1,5 +1,12 @@
 ZSH=$HOME/.dotfiles/zsh/oh-my-zsh
-ZSH_THEME="agnoster"
+
+# Older zsh needs different prompt
+if (zsh --version | grep -q 4.2); then
+  ZSH_THEME="jreese"
+else
+  ZSH_THEME="agnoster"
+fi
+
 DISABLE_AUTO_UPDATE="true"
 COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="yyyy/mm/dd"
