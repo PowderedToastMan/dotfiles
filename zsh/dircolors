@@ -1,5 +1,11 @@
-if (echo $TERM|grep -q 256color); then
-  eval $(dircolors ~/.dotfiles/dircolors/solarized/dircolors.256dark)
-else
+# Set ls colors
+
+if (grep -q '^CentOS release 5' /etc/issue) || (grep -q '^RecoveryOS release 5'); then
   eval $(dircolors ~/.dotfiles/dircolors/solarized/dircolors.ansi-dark)
+else
+  if (echo $TERM|grep -q 256color); then
+    eval $(dircolors ~/.dotfiles/dircolors/solarized/dircolors.256dark)
+  else
+    eval $(dircolors ~/.dotfiles/dircolors/solarized/dircolors.ansi-dark)
+  fi
 fi
