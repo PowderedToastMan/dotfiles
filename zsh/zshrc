@@ -28,4 +28,6 @@ source ~/.dotfiles/zsh/quirks
 source ~/.dotfiles/zsh/mancolors
 source ~/.dotfiles/zsh/dircolors
 
-[ -f ~/.localrc ] && . ~/.localrc
+if [ -f ~/.localrc ]; then
+  . ~/.localrc
+fi
