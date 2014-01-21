@@ -9,3 +9,4 @@ alias lockscreen='xscreensaver-command -lock'
 alias rmove='ionice -c 3 rsync -rv --progress --inplace --remove-source-files'
 CP_VERSION=$(cp --version | head -1 | cut -d ' ' -f 4) && CP_VERSION=$(echo $CP_VERSION|sed 's/\..*//g')
 [ $CP_VERSION -ge 8 ] && alias cp='cp --reflink=auto'
+alias gitup='git submodule init && git submodule update && git submodule foreach git pull origin master'
