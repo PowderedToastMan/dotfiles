@@ -10,4 +10,4 @@ alias rmove='ionice -c 3 rsync -rv --progress --inplace --remove-source-files'
 CP_VERSION=$(cp --version | head -1 | cut -d ' ' -f 4) && CP_VERSION=$(echo $CP_VERSION|sed 's/\..*//g')
 [ $CP_VERSION -ge 8 ] && alias cp='cp --reflink=auto'
 alias gitsub='git submodule update --init --recursive'
-alias gitup='git submodule update --init --recursive && git submodule -recursive foreach git pull origin master'
+alias gitup='git submodule update --init --recursive && git submodule foreach --recursive git pull origin master'
