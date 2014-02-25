@@ -1,8 +1,0 @@
-#! /usr/bin/env bash
-
-pushd ~/.dotfiles/vim/bundle
-git clone https://github.com/Valloric/YouCompleteMe
-cd YouCompleteMe
-git submodule update --init --recursive
-./install.sh --clang-completer
-popd
