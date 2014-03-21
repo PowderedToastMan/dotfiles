@@ -28,6 +28,7 @@ source ~/.dotfiles/zsh/aliases
 source ~/.dotfiles/zsh/quirks
 source ~/.dotfiles/zsh/mancolors
 source ~/.dotfiles/zsh/dircolors
+source ~/.dotfiles/zsh/bindings
 
 if [ -f ~/.localrc ]; then
   . ~/.localrc
