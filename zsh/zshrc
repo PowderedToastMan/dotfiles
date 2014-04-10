@@ -7,7 +7,7 @@ else
   ZSH_THEME="agnoster"
 fi
 
-[ grep --exclude-dir=test test /dev/null 2>/dev/null ] || grep_old=true
+grep --exclude-dir=test --version >/dev/null 2>&1 || grep_old=true
 
 DISABLE_AUTO_UPDATE="true"
 COMPLETION_WAITING_DOTS="true"
@@ -19,7 +19,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 # Old versions of grep don't accept --exclude-dir so unset GREP_OPTIONS
-[[ $grep_old = "true" ]] && unset GREP_OPTIONS
+[[ $grep_old == "true" ]] && unset GREP_OPTIONS
 
 HISTFILE=~/.histfile
 HISTSIZE=50000
