@@ -7,8 +7,7 @@ else
   ZSH_THEME="agnoster"
 fi
 
-# Get grep version
-grep_version=$(grep --version | head -n1 | awk '{print $4}')
+[ grep --exclude-dir=test test /dev/null 2>/dev/null ] || grep_old=true
 
 DISABLE_AUTO_UPDATE="true"
 COMPLETION_WAITING_DOTS="true"
@@ -20,8 +19,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 # Old versions of grep don't accept --exclude-dir so unset GREP_OPTIONS
-[[ "$grep_version" == "$(echo -e "$grep_version\n2.5.1"|sort -V|head -n1)" ]] &&
-  unset GREP_OPTIONS
+[[ $grep_old = "true" ]] && unset GREP_OPTIONS
 
 HISTFILE=~/.histfile
 HISTSIZE=50000
