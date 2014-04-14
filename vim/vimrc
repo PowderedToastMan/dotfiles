@@ -24,6 +24,9 @@ set encoding=utf-8
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
+" indent html
+let g:html_indent_inctags = "html,body,head,tbody"
+
 " OS specific rules
 if has ('win32')
   set nobackup
