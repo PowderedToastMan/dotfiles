@@ -34,6 +34,7 @@ source ~/.dotfiles/zsh/quirks
 source ~/.dotfiles/zsh/mancolors
 source ~/.dotfiles/zsh/dircolors
 source ~/.dotfiles/zsh/bindings
+source ~/.dotfiles/zsh/ruby
 
 if [ -f ~/.localrc ]; then
   . ~/.localrc
