@@ -36,6 +36,6 @@ source ~/.dotfiles/zsh/dircolors
 source ~/.dotfiles/zsh/bindings
 source ~/.dotfiles/zsh/ruby
 
-if [ -f ~/.localrc ]; then
-  . ~/.localrc
-fi
+[[ -f ~/.localrc ]] && . ~/.localrc
+
+true

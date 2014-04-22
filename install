@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [ ! -d "$HOME/.ssh" ]; then
+if [[ ! -d "$HOME/.ssh" ]]; then
    mkdir $HOME/.ssh
    chmod 700 $HOME/.ssh
 fi
@@ -10,13 +10,13 @@ chmod 700 ~/.dotfiles
 chmod 700 ~/.dotfiles/ssh
 chmod 644 ~/.dotfiles/ssh/authorized_keys
 
-[ ! -e "$HOME/.ssh/authorized_keys" ] && ln -s $HOME/.dotfiles/ssh/authorized_keys $HOME/.ssh/authorized_keys
-[ ! -e "$HOME/.tmux.conf" ] && ln -s $HOME/.dotfiles/tmux/tmux.conf $HOME/.tmux.conf
-[ ! -e "$HOME/.zshrc" ] && ln -s $HOME/.dotfiles/zsh/zshrc $HOME/.zshrc
-[ ! -e "$HOME/.zlogout" ] && ln -s $HOME/.dotfiles/zsh/zlogout $HOME/.zlogout
-[ ! -e "$HOME/.vimrc" ] && ln -s $HOME/.dotfiles/vim/vimrc $HOME/.vimrc
-[ ! -e "$HOME/.vim" ] && ln -s $HOME/.dotfiles/vim $HOME/.vim
-[ ! -e "$HOME/.fonts" ] && ln -s $HOME/.dotfiles/fonts $HOME/.fonts
+[[ -e "$HOME/.ssh/authorized_keys" ]] || ln -s $HOME/.dotfiles/ssh/authorized_keys $HOME/.ssh/authorized_keys
+[[ -e "$HOME/.tmux.conf"           ]] || ln -s $HOME/.dotfiles/tmux/tmux.conf $HOME/.tmux.conf
+[[ -e "$HOME/.zshrc"               ]] || ln -s $HOME/.dotfiles/zsh/zshrc $HOME/.zshrc
+[[ -e "$HOME/.zlogout"             ]] || ln -s $HOME/.dotfiles/zsh/zlogout $HOME/.zlogout
+[[ -e "$HOME/.vimrc"               ]] || ln -s $HOME/.dotfiles/vim/vimrc $HOME/.vimrc
+[[ -e "$HOME/.vim"                 ]] || ln -s $HOME/.dotfiles/vim $HOME/.vim
+[[ -e "$HOME/.fonts"               ]] || ln -s $HOME/.dotfiles/fonts $HOME/.fonts
 
 cd $HOME/.dotfiles
 git submodule init
@@ -29,6 +29,8 @@ if (zsh --version | grep -q 4.2); then
   cd $HOME/.dotfiles
 fi
 
-VIMVERSION=$(vim -u -e -T dumb --cmd 'exe "set t_cm=\<C-M>"|echo v:version|quit'|tr -d '\015')
+VIMVERSION=$(vim -u -e -T dumb --cmd 'exe "set t_cm=\<C-M>"|echo v:version|quit' 2>/dev/null |tr -d '\015')
 
-fc-cache -vf ~/.fonts
+which fc-cache &>/dev/null && fc-cache -vf ~/.fonts
+
+exit 0

@@ -12,3 +12,5 @@ rm -f ~/.bashrc
 rm -rf ~/.terminfo
 rm -rf ~/.vim
 rm -rf ~/.fonts
+
+exit 0
