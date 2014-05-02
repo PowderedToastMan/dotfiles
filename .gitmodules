@@ -37,3 +37,6 @@
 [submodule "vim/bundle/exchange"]
 	path = vim/bundle/exchange
 	url = https://github.com/tommcdo/vim-exchange
+[submodule "vim/bundle/surround"]
+	path = vim/bundle/surround
+	url = https://github.com/tpope/vim-surround
