@@ -11,6 +11,13 @@ set backspace=indent,eol,start  " more powerful backspacing
 set background=dark
 colorscheme solarized
 
+set cursorline
+set cursorcolumn
+autocmd WinEnter * setlocal cursorline
+autocmd WinLeave * setlocal nocursorline
+autocmd WinEnter * setlocal cursorcolumn
+autocmd WinLeave * setlocal nocursorcolumn
+
 set autoindent
 set number
 set ts=2 sts=2 sw=2 expandtab
