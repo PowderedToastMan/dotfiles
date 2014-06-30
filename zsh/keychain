@@ -1,4 +1,0 @@
-if which keychain >/dev/null 2>&1; then
-  eval $(keychain --eval --agents ssh -Q -q)
-  alias ssh='eval $(keychain --nogui --eval --agents ssh -Q -q id_rsa) && ssh'
-fi

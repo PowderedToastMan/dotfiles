@@ -35,7 +35,6 @@ source ~/.dotfiles/zsh/mancolors
 source ~/.dotfiles/zsh/dircolors
 source ~/.dotfiles/zsh/bindings
 source ~/.dotfiles/zsh/ruby
-source ~/.dotfiles/zsh/keychain
 
 [[ -f ~/.localrc ]] && . ~/.localrc
 
