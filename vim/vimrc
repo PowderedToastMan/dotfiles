@@ -40,6 +40,7 @@ if has ('win32')
   set nowritebackup
   set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h9
   set mousemodel=
+  set clipboard=unnamed
 else
   silent execute '!rm -rf $HOME/.vim/tmp'
   silent execute '!mkdir -p $HOME/.vimtmp/backup'
