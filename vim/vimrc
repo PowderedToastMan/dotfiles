@@ -92,6 +92,7 @@ if has('gui_running')
 endif
 
 let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsEditSplit="vertical"
 
 if $TERM == "xterm-256color" || $TERM == "screen-256color" || $TERM == "rxv-unicode-256color" || $COLORTERM == "gnome-terminal"
   set t_Co=256
