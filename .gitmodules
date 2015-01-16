@@ -49,3 +49,6 @@
 [submodule "vim/bundle/ultisnips"]
 	path = vim/bundle/ultisnips
 	url = https://github.com/SirVer/ultisnips
+[submodule "vim/bundle/windowswap"]
+	path = vim/bundle/windowswap
+	url = https://github.com/wesQ3/vim-windowswap
