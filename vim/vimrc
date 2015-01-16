@@ -3,6 +3,7 @@ let g:pathogen_disabled = []
 
 if v:version < '703'
   call add(g:pathogen_disabled, 'YouCompleteMe')
+  call add(g:pathogen_disabled, 'ultisnips')
 endif
 call pathogen#infect()
 
