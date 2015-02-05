@@ -60,6 +60,8 @@ set nowrap
 set ofu=syntaxcomplete#Complete
 set ruler
 set linespace=0
+set splitbelow
+set splitright
 
 " filetype
 filetype on
