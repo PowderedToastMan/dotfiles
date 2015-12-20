@@ -35,6 +35,19 @@ let g:airline_powerline_fonts = 1
 " indent html
 let g:html_indent_inctags = "html,body,head,tbody"
 
+" easymotion 2-character search
+nmap s <Plug>(easymotion-s2)
+nmap t <Plug>(easymotion-t2)
+
+" easymotion n-character search
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+map  n <Plug>(easymotion-next)
+map  N <Plug>(easymotion-prev)
+
+" easymotion misc
+let g:EasyMotion_smartcase = 1
+
 " OS specific rules
 if has ('win32')
   set nobackup
