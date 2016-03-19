@@ -16,12 +16,6 @@
 [submodule "vim/bundle/json"]
 	path = vim/bundle/json
 	url = https://github.com/elzr/vim-json
-[submodule "vim/bundle/solarized"]
-	path = vim/bundle/solarized
-	url = https://github.com/altercation/vim-colors-solarized
-[submodule "dircolors/solarized"]
-	path = dircolors/solarized
-	url = https://github.com/seebi/dircolors-solarized
 [submodule "zsh/oh-my-zsh"]
 	path = zsh/oh-my-zsh
 	url = git://github.com/robbyrussell/oh-my-zsh.git
@@ -64,3 +58,9 @@
 [submodule "vim/bundle/vim-airline-themes"]
 	path = vim/bundle/vim-airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes
+[submodule "vim/bundle/hybrid"]
+	path = vim/bundle/hybrid
+	url = https://github.com/w0ng/vim-hybrid
+[submodule "dircolors/jellybeans"]
+	path = dircolors/jellybeans
+	url = https://github.com/peterhellberg/dircolors-jellybeans
