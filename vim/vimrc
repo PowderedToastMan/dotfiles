@@ -48,21 +48,15 @@ map  N <Plug>(easymotion-prev)
 " easymotion misc
 let g:EasyMotion_smartcase = 1
 
+set nobackup
+set nowritebackup
+
 " OS specific rules
 if has ('win32')
-  set nobackup
-  set nowritebackup
   set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h9
   set mousemodel=
   set clipboard=unnamed
 else
-  silent execute '!rm -rf $HOME/.vim/tmp'
-  silent execute '!mkdir -p $HOME/.vimtmp/backup'
-  set backupdir=$HOME/.vimtmp/backup
-  silent execute '!mkdir -p $HOME/.vimtmp/swap'
-  set directory=$HOME/.vimtmp/swap
-  silent execute '!mkdir -p $HOME/.vimtmp/views'
-  set viewdir=$HOME/.vimtmp/views
   set guifont=Terminus
 endif
 
