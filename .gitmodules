@@ -61,6 +61,6 @@
 [submodule "vim/bundle/hybrid"]
 	path = vim/bundle/hybrid
 	url = https://github.com/w0ng/vim-hybrid
-[submodule "dircolors/jellybeans"]
-	path = dircolors/jellybeans
-	url = https://github.com/peterhellberg/dircolors-jellybeans
+[submodule "dircolors/solarized"]
+	path = dircolors/solarized
+	url = https://github.com/seebi/dircolors-solarized
