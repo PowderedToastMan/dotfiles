@@ -1,11 +1,6 @@
 ZSH=$HOME/.dotfiles/zsh/oh-my-zsh
 
-# Older zsh needs different prompt
-if (zsh --version | grep -q 4.2); then
-  ZSH_THEME="gentoo"
-else
-  ZSH_THEME="agnoster"
-fi
+ZSH_THEME="agnoster"
 
 grep --exclude-dir=test --version >/dev/null 2>&1 || grep_old=true
 
