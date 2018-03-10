@@ -36,7 +36,7 @@ HISTFILE=~/.histfile
 HISTSIZE=50000
 SAVEHIST=50000
 
-export EDITOR="vim"
+export EDITOR="nvim"
 export MAIL=$HOME/Mail/inbox
 
 source ~/.dotfiles/zsh/paths

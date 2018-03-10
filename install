@@ -10,13 +10,19 @@ chmod 700 ~/.dotfiles
 chmod 700 ~/.dotfiles/ssh
 chmod 644 ~/.dotfiles/ssh/authorized_keys
 
+mkdir -p $HOME/.config/nvim
+[[ ! -d "$HOME/.config/nvim/pack/minipac/opt/minipac" ]] && {
+  git clone https://github.com/k-takata/minpac.git \
+    $HOME/.config/nvim/pack/minpac/opt/minpac
+  touch $HOME/.config/nvim/minpacupdate
+}
+
 [[ -e "$HOME/.ssh/authorized_keys" ]] || ln -s $HOME/.dotfiles/ssh/authorized_keys $HOME/.ssh/authorized_keys
 [[ -e "$HOME/.tmux.conf"           ]] || ln -s $HOME/.dotfiles/tmux/tmux.conf      $HOME/.tmux.conf
 [[ -e "$HOME/.zshrc"               ]] || ln -s $HOME/.dotfiles/zsh/zshrc           $HOME/.zshrc
 [[ -e "$HOME/.zlogout"             ]] || ln -s $HOME/.dotfiles/zsh/zlogout         $HOME/.zlogout
-[[ -e "$HOME/.vimrc"               ]] || ln -s $HOME/.dotfiles/vim/vimrc           $HOME/.vimrc
-[[ -e "$HOME/.vim"                 ]] || ln -s $HOME/.dotfiles/vim                 $HOME/.vim
 [[ -e "$HOME/.fonts"               ]] || ln -s $HOME/.dotfiles/fonts               $HOME/.fonts
+[[ -e "$HOME/.config/vim/init.vim" ]] || ln -s $HOME/.dotfiles/nvim/init.vim       $HOME/.config/nvim/init.vim
 
 cd $HOME/.dotfiles
 git submodule init

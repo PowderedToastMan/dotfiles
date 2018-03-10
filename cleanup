@@ -12,5 +12,6 @@ rm -f ~/.bashrc
 rm -rf ~/.terminfo
 rm -rf ~/.vim
 rm -rf ~/.fonts
+rm -rf ~/.config/nvim
 
 exit 0
