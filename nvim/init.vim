@@ -14,9 +14,9 @@ if exists('*minpac#init')
   call minpac#add('vim-airline/vim-airline')
   call minpac#add('vim-airline/vim-airline-themes')
 
-  if filereadable($HOME."/.config/nvim/minpacupdate")
+  if filereadable($XDG_CONFIG_HOME."/nvim/minpacupdate")
     silent call minpac#update()
-    call delete($HOME."/.config/nvim/minpacupdate")
+    call delete($XDG_CONFIG_HOME."/nvim/minpacupdate")
   endif
 
   let g:hybrid_custom_colors = 1

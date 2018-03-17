@@ -10,11 +10,11 @@ chmod 700 ~/.dotfiles
 chmod 700 ~/.dotfiles/ssh
 chmod 644 ~/.dotfiles/ssh/authorized_keys
 
-mkdir -p $HOME/.config/nvim
-[[ ! -d "$HOME/.config/nvim/pack/minipac/opt/minipac" ]] && {
+mkdir -p "$XDG_CONFIG_HOME/nvim"
+[[ ! -d "$XDG_CONFIG_HOME/nvim/pack/minipac/opt/minipac" ]] && {
   git clone https://github.com/k-takata/minpac.git \
-    $HOME/.config/nvim/pack/minpac/opt/minpac
-  touch $HOME/.config/nvim/minpacupdate
+    "$XDG_CONFIG_HOME/nvim/pack/minpac/opt/minpac"
+  touch "$XDG_CONFIG_HOME/nvim/minpacupdate"
 }
 
 [[ -e "$HOME/.ssh/authorized_keys" ]] || ln -s $HOME/.dotfiles/ssh/authorized_keys $HOME/.ssh/authorized_keys
