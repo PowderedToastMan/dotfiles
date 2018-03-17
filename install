@@ -21,7 +21,6 @@ mkdir -p "$XDG_CONFIG_HOME/nvim"
 [[ -e "$HOME/.tmux.conf"           ]] || ln -s $HOME/.dotfiles/tmux/tmux.conf      $HOME/.tmux.conf
 [[ -e "$HOME/.zshrc"               ]] || ln -s $HOME/.dotfiles/zsh/zshrc           $HOME/.zshrc
 [[ -e "$HOME/.zlogout"             ]] || ln -s $HOME/.dotfiles/zsh/zlogout         $HOME/.zlogout
-[[ -e "$HOME/.fonts"               ]] || ln -s $HOME/.dotfiles/fonts               $HOME/.fonts
 [[ -e "$HOME/.config/vim/init.vim" ]] || ln -s $HOME/.dotfiles/nvim/init.vim       $HOME/.config/nvim/init.vim
 
 cd $HOME/.dotfiles
@@ -36,7 +35,5 @@ if (zsh --version | grep -q 4.2); then
 fi
 
 VIMVERSION=$(vim -u -e -T dumb --cmd 'exe "set t_cm=\<C-M>"|echo v:version|quit' 2>/dev/null |tr -d '\015')
-
-which fc-cache &>/dev/null && fc-cache -vf ~/.fonts
 
 exit 0
