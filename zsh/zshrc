@@ -8,6 +8,7 @@ DISABLE_AUTO_UPDATE="true"
 COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="yyyy/mm/dd"
 CASE_SENSITIVE="true"
+ZSH_DISABLE_COMPFIX="true"
 plugins=(git tmux vi-mode)
 source $ZSH/oh-my-zsh.sh
 setopt auto_name_dirs
