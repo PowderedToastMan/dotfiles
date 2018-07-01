@@ -41,6 +41,7 @@ set ts=2 sts=2 sw=2 expandtab
 set linebreak
 set mouse=a
 set clipboard+=unnamedplus
+set nowrap
 
 nnoremap <leader>w :setlocal wrap!<cr>
 nnoremap <leader>p :set paste!<cr>
