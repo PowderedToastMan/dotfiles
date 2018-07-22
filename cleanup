@@ -1,17 +1,22 @@
 #!/usr/bin/env bash
+set -eu
 
-rm -f ~/.ssh/authorized_keys
-rm -f ~/.tmux.conf
-rm -f ~/.zshrc
-rm -f ~/.zlogout
-rm -f ~/.vimrc
-rm -f ~/.vimrc_ide
-rm -f ~/.bash_profile
-rm -f ~/.bashrc
+rm -f "$HOME/.ssh/authorized_keys"
+rm -f "$HOME/.tmux.conf"
+rm -f "$HOME/.zshrc"
+rm -f "$HOME/.zlogout"
+rm -f "$HOME/.vimrc"
+rm -f "$HOME/.vimrc_ide"
+rm -f "$HOME/.bash_profile"
+rm -f "$HOME/.bashrc"
+rm -f "$HOME/.SpaceVim.d/init.toml"
+rm -f "$HOME/.SpaceVim.d/autoload/myspacevim.vim"
 
-rm -rf ~/.terminfo
-rm -rf ~/.vim
-rm -rf ~/.fonts
-rm -rf ~/.config/nvim
+rm -rf "$HOME/.terminfo"
+rm -rf "$HOME/.vim"
+rm -rf "$HOME/.fonts"
+rm -rf "$HOME/.config/nvim"
+rm -rf "$HOME/.SpaceVim"
+rm -rf "$HOME/.cache/SpaceVim"
+rm -rf "$HOME/.cache/vimfiles"
 
-exit 0

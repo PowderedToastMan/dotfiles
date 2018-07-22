@@ -1,6 +1,7 @@
 ZSH=$HOME/.dotfiles/zsh/oh-my-zsh
+ZSH_CUSTOM="$HOME/.dotfiles/zsh/oh-my-zsh-custom"
 
-ZSH_THEME="agnoster"
+ZSH_THEME="gruvbox-dark"
 
 grep --exclude-dir=test --version >/dev/null 2>&1 || grep_old=true
 
@@ -9,7 +10,7 @@ COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="yyyy/mm/dd"
 CASE_SENSITIVE="true"
 ZSH_DISABLE_COMPFIX="true"
-plugins=(git tmux vi-mode)
+plugins=(git tmux vi-mode svn)
 source $ZSH/oh-my-zsh.sh
 setopt auto_name_dirs
 

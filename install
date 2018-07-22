@@ -1,39 +1,37 @@
-#!/usr/bin/env bash
+#! /usr/bin/env bash
+set -eu
 
 if [[ ! -d "$HOME/.ssh" ]]; then
-   mkdir $HOME/.ssh
-   chmod 700 $HOME/.ssh
+  mkdir "$HOME/.ssh"
+  chmod 700 "$HOME/.ssh"
 fi
 
 # we may have to fix .dotfiles/ssh permissions
-chmod 700 ~/.dotfiles
-chmod 700 ~/.dotfiles/ssh
-chmod 644 ~/.dotfiles/ssh/authorized_keys
+chmod 700 "$HOME/.dotfiles"
+chmod 700 "$HOME/.dotfiles/ssh"
+chmod 644 "$HOME/.dotfiles/ssh/authorized_keys"
 
 mkdir -p "$XDG_CONFIG_HOME/nvim"
-[[ ! -d "$XDG_CONFIG_HOME/nvim/pack/minipac/opt/minipac" ]] && {
-  git clone https://github.com/k-takata/minpac.git \
-    "$XDG_CONFIG_HOME/nvim/pack/minpac/opt/minpac"
-  touch "$XDG_CONFIG_HOME/nvim/minpacupdate"
-}
+mkdir -p "$HOME/.SpaceVim.d/autoload"
 
-[[ -e "$HOME/.ssh/authorized_keys" ]] || ln -s $HOME/.dotfiles/ssh/authorized_keys $HOME/.ssh/authorized_keys
-[[ -e "$HOME/.tmux.conf"           ]] || ln -s $HOME/.dotfiles/tmux/tmux.conf      $HOME/.tmux.conf
-[[ -e "$HOME/.zshrc"               ]] || ln -s $HOME/.dotfiles/zsh/zshrc           $HOME/.zshrc
-[[ -e "$HOME/.zlogout"             ]] || ln -s $HOME/.dotfiles/zsh/zlogout         $HOME/.zlogout
-[[ -e "$HOME/.config/vim/init.vim" ]] || ln -s $HOME/.dotfiles/nvim/init.vim       $HOME/.config/nvim/init.vim
+declare -A links
+links["$HOME/.ssh/authorized_keys"]="$HOME/.dotfiles/ssh/authorized_keys"
+links["$HOME/.tmux.conf"]="$HOME/.dotfiles/tmux/tmux.conf"
+links["$HOME/.zshrc"]="$HOME/.dotfiles/zsh/zshrc"
+links["$HOME/.zlogout"]="$HOME/.dotfiles/zsh/zlogout"
+links["$HOME/.config/nvim/init.vim"]="$HOME/.dotfiles/nvim/init.vim"
+links["$HOME/.SpaceVim.d/init.toml"]="$HOME/.dotfiles/SpaceVim/init.toml"
+links["$HOME/.SpaceVim.d/autoload/myspacevim.vim"]="$HOME/.dotfiles/SpaceVim/autoload/myspacevim.vim"
+for f in "${!links[@]}"; do [[ -e $f ]] || ln -s "${links[$f]}" "$f"; done
 
-cd $HOME/.dotfiles
+git submodule update
+cd "$HOME/.dotfiles"
 git submodule init
 git submodule update
 
 # Fix oh-my-zsh on older zsh versions
 if (zsh --version | grep -q 4.2); then
-  cd $HOME/.dotfiles/zsh/oh-my-zsh
+  cd "$HOME/.dotfiles/zsh/oh-my-zsh"
   git checkout e3cede37a0 -- lib/termsupport.zsh
-  cd $HOME/.dotfiles
+  cd "$HOME/.dotfiles"
 fi
-
-VIMVERSION=$(vim -u -e -T dumb --cmd 'exe "set t_cm=\<C-M>"|echo v:version|quit' 2>/dev/null |tr -d '\015')
-
-exit 0
