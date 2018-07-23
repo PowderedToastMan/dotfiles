@@ -1,5 +1,5 @@
 let g:spacevimrc = $HOME . '/.SpaceVim/vimrc'
-if filereadable(expand(g:spacevimrc))
+if filereadable(expand(g:spacevimrc)) && empty($SUDO_USER)
   exe 'source' g:spacevimrc
   unlet g:spacevimrc
 else
