@@ -11,7 +11,7 @@ chmod 700 "$HOME/.dotfiles"
 chmod 700 "$HOME/.dotfiles/ssh"
 chmod 644 "$HOME/.dotfiles/ssh/authorized_keys"
 
-mkdir -p "$XDG_CONFIG_HOME/nvim"
+mkdir -p "$HOME/.config/nvim"
 mkdir -p "$HOME/.SpaceVim.d/autoload"
 
 declare -A links
