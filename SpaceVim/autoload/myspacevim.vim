@@ -1,7 +1,7 @@
 func! myspacevim#before() abort
 
   if has("win32")
-    let g:spacevim_guifont = 'Terminus_(TTF)_for_Windows:h11'
+    let g:spacevim_guifont = 'Terminus_(TTF)_for_Windows:h12'
     set clipboard=unnamed
   endif
 
