@@ -17,6 +17,7 @@
     filemanager = "nerdtree"
     bootstrap_before = "myspacevim#before"
     bootstrap_after = "myspacevim#after"
+    disabled_plugins = ["delimitMate"]
 
 # Enable autocomplete layer
 [[layers]]
