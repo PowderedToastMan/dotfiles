@@ -12,6 +12,7 @@ endf
 
 func! myspacevim#after() abort
   set mousemodel=extend
+  set conceallevel=0
 
   if has("nvim")
     set inccommand=split
