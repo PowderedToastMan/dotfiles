@@ -20,21 +20,6 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 
-# Older tmux versions don't display prompt_status correctly
-# Example:  tmux 1.8 on CentOS 7
-if (( $(tmux -V | awk '{print $2}') <= 1.8 )); then
-  PROMPT="$(
-    RETVAL=$?
-    prompt_virtualenv
-    prompt_context
-    prompt_dir
-    prompt_git
-    prompt_bzr
-    prompt_hg
-    prompt_end
-  ) "
-fi
-
 # Old versions of grep don't accept --exclude-dir so unset GREP_OPTIONS
 [[ $grep_old == "true" ]] && unset GREP_OPTIONS
 
