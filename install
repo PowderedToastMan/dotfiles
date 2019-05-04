@@ -29,6 +29,8 @@ cd "$HOME/.dotfiles"
 git submodule init
 git submodule update
 
+git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
+
 # Fix oh-my-zsh on older zsh versions
 if (zsh --version | grep -q 4.2); then
   cd "$HOME/.dotfiles/zsh/oh-my-zsh"
