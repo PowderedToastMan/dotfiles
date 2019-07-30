@@ -1,4 +1,5 @@
 let g:spacevimrc = $HOME . '/.SpaceVim/vimrc'
+set title
 if filereadable(expand(g:spacevimrc)) && empty($SUDO_USER)
   exe 'source' g:spacevimrc
   unlet g:spacevimrc
