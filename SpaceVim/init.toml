@@ -32,6 +32,9 @@ default_height = 30
 [[layers]]
 name = "unite"
 
+[[layers]]
+name = "sudo"
+
 [[custom_plugins]]
 name = 'PProvost/vim-ps1'
 
