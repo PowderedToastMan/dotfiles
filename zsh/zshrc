@@ -1,7 +1,8 @@
 ZSH=$HOME/.dotfiles/zsh/oh-my-zsh
 ZSH_CUSTOM="$HOME/.dotfiles/zsh/oh-my-zsh-custom"
 
-ZSH_THEME="gruvbox-dark"
+ZSH_THEME="gruvbox"
+SOLARIZED_THEME="dark"
 
 grep --exclude-dir=test --version >/dev/null 2>&1 || grep_old=true
 
