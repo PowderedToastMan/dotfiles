@@ -39,6 +39,9 @@ source ~/.dotfiles/zsh/dircolors
 source ~/.dotfiles/zsh/bindings
 source ~/.dotfiles/zsh/ruby
 
+# Additional dircolors
+export LS_COLORS="${LS_COLORS}*.zst=00;38;5;61:"
+
 [[ -f ~/.localrc ]] && . ~/.localrc
 
 true
