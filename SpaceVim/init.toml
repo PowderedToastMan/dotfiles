@@ -46,3 +46,6 @@ name = 'machakann/vim-highlightedyank'
 
 [[custom_plugins]]
 name = 'tpope/vim-surround'
+
+[[custom_plugins]]
+name = 'junegunn/vim-easy-align'
