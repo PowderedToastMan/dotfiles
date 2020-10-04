@@ -7,6 +7,7 @@ func! myspacevim#before() abort
 
   if has("gui_running")
     set lines=40 columns=120
+    set clipboard=unnamedplus
   endif
 endf
 
