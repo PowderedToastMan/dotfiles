@@ -37,3 +37,5 @@ if (zsh --version | grep -q 4.2); then
   git checkout e3cede37a0 -- lib/termsupport.zsh
   cd "$HOME/.dotfiles"
 fi
+
+nvim -cq
