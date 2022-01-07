@@ -24,5 +24,8 @@ func! myspacevim#after() abort
 
   if has("nvim")
     set inccommand=split
+    if has("win32")
+      call GuiFont('Terminus (TTF) for Windows:h12')
+    endif
   endif
 endf
