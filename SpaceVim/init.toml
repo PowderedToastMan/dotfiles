@@ -49,3 +49,6 @@ name = 'tpope/vim-surround'
 
 [[custom_plugins]]
 name = 'junegunn/vim-easy-align'
+
+[[custom_plugins]]
+name = 'vimwiki/vimwiki'
