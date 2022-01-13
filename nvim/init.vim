@@ -1,9 +1,12 @@
-
 set shiftwidth=2
 set smartindent
 set relativenumber
+set t_Co=256
+set termguicolors
+set cursorline
+set background=dark
 
-if empty('g:plug_home')
+if empty((globpath(&rtp, '/autoload/plug.vim')))
   set statusline=
   set statusline+=%2*[%n]%*
   set statusline+=%#LineNr#
@@ -16,6 +19,7 @@ if empty('g:plug_home')
   set statusline+=\[%{&fileformat}\]
   set statusline+=\ %5((%l:%c)%)
   set statusline+=\ %p%%
+  colorscheme desert
 else
   " Run PlugInstall if there are missing plugins
   autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
@@ -44,12 +48,8 @@ else
   colorscheme gruvbox
   let g:gruvbox_contrast_dark = 'hard'
   let g:gruvbox_termcolors = 256
-  set background=dark
   let &t_8f = "\e[38;2;%lu;%lu;%lum"
   let &t_8b = "\e[48;2;%lu;%lu;%lum"
-  set t_Co=256
-  set termguicolors
-  set cursorline
 
   set clipboard+=unnamedplus
 endif
