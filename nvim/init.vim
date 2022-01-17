@@ -52,4 +52,5 @@ else
   let &t_8b = "\e[48;2;%lu;%lu;%lum"
 
   set clipboard+=unnamedplus
+  set mouse=a
 endif
