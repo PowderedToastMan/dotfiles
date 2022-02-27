@@ -21,3 +21,5 @@ rm -rf "$HOME/.cache/SpaceVim"
 rm -rf "$HOME/.cache/vimfiles"
 rm -rf "$HOME/.tmux"
 
+rm -rf "$HOME/.local/share/nvim/plugged"
+rm -rf "$HOME/.local/share/nvim/site/autoloal/plug.vim"
