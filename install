@@ -11,17 +11,16 @@ chmod 700 "$HOME/.dotfiles"
 chmod 700 "$HOME/.dotfiles/ssh"
 chmod 644 "$HOME/.dotfiles/ssh/authorized_keys"
 
-mkdir -p "$HOME/.config/nvim"
-mkdir -p "$HOME/.SpaceVim.d/autoload"
+# mkdir -p "$HOME/.config/nvim"
 
 declare -A links
 links["$HOME/.ssh/authorized_keys"]="$HOME/.dotfiles/ssh/authorized_keys"
 links["$HOME/.tmux.conf"]="$HOME/.dotfiles/tmux/tmux.conf"
 links["$HOME/.zshrc"]="$HOME/.dotfiles/zsh/zshrc"
 links["$HOME/.zlogout"]="$HOME/.dotfiles/zsh/zlogout"
-links["$HOME/.config/nvim/init.vim"]="$HOME/.dotfiles/nvim/init.vim"
-links["$HOME/.SpaceVim.d/init.toml"]="$HOME/.dotfiles/SpaceVim/init.toml"
-links["$HOME/.SpaceVim.d/autoload/myspacevim.vim"]="$HOME/.dotfiles/SpaceVim/autoload/myspacevim.vim"
+links["$HOME/.config/nvim"]="$HOME/.dotfiles/nvim"
+#links["$HOME/.config/nvim/init.lua"]="$HOME/.dotfiles/nvim/init.lua"
+#links["$HOME/.config/nvim/ginit.vim"]="$HOME/.dotfiles/nvim/ginit.vim"
 for f in "${!links[@]}"; do [[ -e $f ]] || ln -s "${links[$f]}" "$f"; done
 
 git submodule update
