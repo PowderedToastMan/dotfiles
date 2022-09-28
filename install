@@ -11,30 +11,17 @@ chmod 700 "$HOME/.dotfiles"
 chmod 700 "$HOME/.dotfiles/ssh"
 chmod 644 "$HOME/.dotfiles/ssh/authorized_keys"
 
-# mkdir -p "$HOME/.config/nvim"
-
 declare -A links
 links["$HOME/.ssh/authorized_keys"]="$HOME/.dotfiles/ssh/authorized_keys"
 links["$HOME/.tmux.conf"]="$HOME/.dotfiles/tmux/tmux.conf"
-links["$HOME/.zshrc"]="$HOME/.dotfiles/zsh/zshrc"
-links["$HOME/.zlogout"]="$HOME/.dotfiles/zsh/zlogout"
 links["$HOME/.config/nvim"]="$HOME/.dotfiles/nvim"
-#links["$HOME/.config/nvim/init.lua"]="$HOME/.dotfiles/nvim/init.lua"
-#links["$HOME/.config/nvim/ginit.vim"]="$HOME/.dotfiles/nvim/ginit.vim"
+links["$HOME/.config/fish"]="$HOME/.dotfiles/fish"
 for f in "${!links[@]}"; do [[ -e $f ]] || ln -s "${links[$f]}" "$f"; done
 
-git submodule update
 cd "$HOME/.dotfiles"
 git submodule init
 git submodule update
 
 git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
-
-# Fix oh-my-zsh on older zsh versions
-if (zsh --version | grep -q 4.2); then
-  cd "$HOME/.dotfiles/zsh/oh-my-zsh"
-  git checkout e3cede37a0 -- lib/termsupport.zsh
-  cd "$HOME/.dotfiles"
-fi
 
 nvim -cq
