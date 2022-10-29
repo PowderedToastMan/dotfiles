@@ -30,13 +30,9 @@ SAVEHIST=50000
 export EDITOR="nvim"
 export MAIL=$HOME/Mail/inbox
 
-source ~/.dotfiles/zsh/paths
-source ~/.dotfiles/zsh/aliases
-source ~/.dotfiles/zsh/quirks
-source ~/.dotfiles/zsh/mancolors
-source ~/.dotfiles/zsh/dircolors
-source ~/.dotfiles/zsh/bindings
-source ~/.dotfiles/zsh/ruby
+for f in "$HOME/.dotfiles/zsh/functions"/*.sh; do
+  source "$f"
+done
 
 # Additional dircolors
 export LS_COLORS="${LS_COLORS}*.zst=00;38;5;61:"
