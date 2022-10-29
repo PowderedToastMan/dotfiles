@@ -1,4 +1,4 @@
-ZSH=$HOME/.dotfiles/zsh/oh-my-zsh
+ZSH=$HOME/.dotfiles/zsh/ohmyzsh
 
 ZSH_THEME="agnoster"
 SOLARIZED_THEME="dark"

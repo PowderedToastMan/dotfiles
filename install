@@ -30,11 +30,4 @@ git submodule update
 
 git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
 
-# Fix oh-my-zsh on older zsh versions
-if (zsh --version | grep -q 4.2); then
-  cd "$HOME/.dotfiles/zsh/oh-my-zsh"
-  git checkout e3cede37a0 -- lib/termsupport.zsh
-  cd "$HOME/.dotfiles"
-fi
-
 nvim -cq
