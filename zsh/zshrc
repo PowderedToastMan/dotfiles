@@ -32,4 +32,7 @@ export LS_COLORS="${LS_COLORS}*.zst=00;38;5;61:"
 
 [[ -f ~/.localrc ]] && . ~/.localrc
 
+# Set background color
+printf %b '\e]11;#1d2021\a'
+
 true
