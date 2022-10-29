@@ -3,8 +3,6 @@ ZSH=$HOME/.dotfiles/zsh/ohmyzsh
 ZSH_THEME="agnoster"
 SOLARIZED_THEME="dark"
 
-grep --exclude-dir=test --version >/dev/null 2>&1 || grep_old=true
-
 DISABLE_AUTO_UPDATE="true"
 COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="yyyy/mm/dd"
@@ -15,19 +13,14 @@ source $ZSH/oh-my-zsh.sh
 setopt auto_name_dirs
 
 # User configuration
-
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
-
-# Old versions of grep don't accept --exclude-dir so unset GREP_OPTIONS
-[[ $grep_old == "true" ]] && unset GREP_OPTIONS
 
 HISTFILE=~/.histfile
 HISTSIZE=50000
 SAVEHIST=50000
 
-export EDITOR="nvim"
 export MAIL=$HOME/Mail/inbox
 
 for f in "$HOME/.dotfiles/zsh/functions"/*.sh; do

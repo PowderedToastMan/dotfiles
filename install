@@ -19,8 +19,6 @@ links["$HOME/.tmux.conf"]="$HOME/.dotfiles/tmux/tmux.conf"
 links["$HOME/.zshrc"]="$HOME/.dotfiles/zsh/zshrc"
 links["$HOME/.zlogout"]="$HOME/.dotfiles/zsh/zlogout"
 links["$HOME/.config/nvim"]="$HOME/.dotfiles/nvim"
-#links["$HOME/.config/nvim/init.lua"]="$HOME/.dotfiles/nvim/init.lua"
-#links["$HOME/.config/nvim/ginit.vim"]="$HOME/.dotfiles/nvim/ginit.vim"
 for f in "${!links[@]}"; do [[ -e $f ]] || ln -s "${links[$f]}" "$f"; done
 
 git submodule update
