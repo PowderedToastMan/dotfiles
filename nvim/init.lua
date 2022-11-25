@@ -2,6 +2,7 @@
 -- General
 -----------------------------------------------------------
 vim.opt.mouse = 'a'                 -- Enable mouse support
+vim.opt.mousemodel = 'extend'       -- Don't want popup menu
 vim.opt.clipboard = 'unnamedplus'   -- Copy/paste to system clipboard
 vim.opt.swapfile = false            -- Don't use swapfile
 
